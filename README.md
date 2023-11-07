@@ -24,8 +24,8 @@ In this project you'll choose an api to consume. You will build an application f
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Start up the app using `npm start`.
+- [x] Create a forked copy of this project.
+- [x] Start up the app using `npm start`.
 - [ ] Add your code into the `\src` folder.
 
 ### Task 2: Minimum Viable Product
