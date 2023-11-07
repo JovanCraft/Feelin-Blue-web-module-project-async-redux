@@ -1,4 +1,4 @@
-import { GET_JOKE, GET_JOKE_SUCCESS, GET_JOKE_ERROR, SET_IS_FETCHING } from "../actions";
+import { GET_JOKE_SUCCESS, GET_JOKE_ERROR, SET_IS_FETCHING } from "../actions";
 
 
 const initialState = {
@@ -25,6 +25,12 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 joke: action.payload
+            }
+        case GET_JOKE_ERROR:
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
             }
         default:
             return state;

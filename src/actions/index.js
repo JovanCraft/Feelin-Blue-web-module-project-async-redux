@@ -8,16 +8,20 @@ export const SET_IS_FETCHING = `SET_IS_FETCHING`
 const JokesURL = 'https://official-joke-api.appspot.com/random_joke'
 
 export const getJoke = () => dispatch => {
-
+    dispatch(setIsFetching(true))
     axios.get(JokesURL)
     .then(res => {
-        console.log(res)
+        const joke = res.data
+        dispatch(getJokeSuccess(joke))
+
+        //console.log(joke)
     })
     .catch(err => {
-        console.log(err)
+        dispatch(getJokeError(err))
+        //console.log(err)
     })
 
-    return { type: GET_JOKE }
+    return { type: GET_JOKE, payload: { data: 'hello'} }
 }
 
 export const setIsFetching = isFetching => {
